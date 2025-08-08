@@ -3,6 +3,7 @@ import { stripe } from "@/lib/stripe";
 
 const ProductPage = async ({ params }: { params: { id: string } }) => {
   try {
+    // retrieve product id
     const product = await stripe.products.retrieve(params.id, {
       expand: ["default_price"],
     });
