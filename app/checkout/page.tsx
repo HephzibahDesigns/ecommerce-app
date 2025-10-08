@@ -100,6 +100,8 @@ const CheckoutPage = () => {
       </Card>
 
       <form className="max-w-md mx-auto" action={checkoutAction}>
+        <input type="hidden" name="items" value={JSON.stringify(items)} />
+
         <Button
           type="submit"
           variant="default"
