@@ -1,7 +1,7 @@
 import ProductDetail from "@/components/ProductDetail";
 import { stripe } from "@/lib/stripe";
 
-const ProductPage = async ({ params }: { params: { id: string } }) => {
+const ProductPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   try {
     // retrieve product id
     const { id } = await params;
