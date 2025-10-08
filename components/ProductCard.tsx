@@ -22,7 +22,7 @@ const ProductCard = ({ product }: props) => {
               alt={product.name}
               width={300}
               height={50}
-              className=" object-cover group-hover:opacity-90 transition-opacity duration-300 rounded-t-lg"
+              className="object-cover group-hover:opacity-90 transition-opacity duration-300 rounded-t-lg"
             />
           </div>
         )}
@@ -41,7 +41,11 @@ const ProductCard = ({ product }: props) => {
             </p>
             {price && price.unit_amount && (
               <p className="text-lg font-semibold  text-gray-900">
-                ₦{(price.unit_amount / 100).toFixed(2)}
+                ₦
+                {(price.unit_amount / 100).toLocaleString(undefined, {
+                  minimumFractionDigits: 2,
+                  maximumFractionDigits: 2,
+                })}
               </p>
             )}
 
